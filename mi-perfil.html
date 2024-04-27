@@ -62,9 +62,11 @@
   <body class="relative h-auto min-h-screen w-full overflow-x-hidden">
     <div class="flex w-full flex-row flex-wrap">
       <!-- basic navbar -->
-      <nav class="fixed flex h-16 w-full basis-full flex-col bg-neutral-800">
-        <div class="mx-auto h-16 w-full px-2 sm:px-6 lg:px-8">
-          <div class="relative z-30 flex w-full items-center justify-between">
+      <nav
+        class="fixed z-40 flex h-24 sm:h-16 w-full basis-full flex-col bg-neutral-800"
+      >
+        <div class="mx-auto h-24 sm:h-16 w-full px-2 sm:px-6 lg:px-8">
+          <div class="relative z-40 flex w-full items-center justify-between">
             <!-- {/* Mobile menu, show/hide based on menu state. */} -->
             <!-- <MobileMenuButton /> -->
             <!-- <MobileContainer menu="MOBILE"> -->
@@ -78,9 +80,9 @@
             </MobileContainer> -->
 
             <div
-              class="flex flex-1 flex-row items-center justify-center sm:justify-between"
+              class="flex flex-1 flex-col sm:flex-row items-center justify-center sm:justify-start sm:gap-8"
             >
-              <div class="basis-1/3">
+              <div class="w-fit mr-8">
                 <a
                   href="/"
                   class="relative flex h-16 w-56 flex-shrink-0 items-center justify-center p-2 drop-shadow-lg"
@@ -102,7 +104,7 @@
                 </a>
               </div>
               <div
-                class="hidden sm:flex ml-8 basis-1/3 w-full items-center justify-center"
+                class="flex flex-row w-auto min-w-full items-center justify-evenly sm:justify-start"
               >
                 <div class="flex space-x-4">
                   <a
@@ -133,33 +135,335 @@
                       class="absolute bottom-2 left-0 h-0.5 w-0 bg-neutral-200 transition-all duration-150 group-hover:w-10/12 sm:left-1/2 sm:-translate-x-[50%]"
                     ></span>
                   </a>
-                  <a
-                    href="/nosotros"
-                    class="group relative block rounded-md px-3 py-2 text-sm font-bold text-neutral-500 transition-colors duration-150 hover:text-neutral-200"
-                  >
-                    Nosotros
-                    <span
-                      class="absolute bottom-2 left-0 h-0.5 w-0 bg-neutral-200 transition-all duration-150 group-hover:w-10/12 sm:left-1/2 sm:-translate-x-[50%]"
-                    ></span>
-                  </a>
                 </div>
               </div>
-              <div class="hidden md:block basis-1/3"></div>
             </div>
 
             <div
-              class="absolute inset-y-0 right-0 flex items-center gap-1 pr-1 sm:static sm:inset-auto sm:ml-6 sm:gap-4 sm:pr-0"
+              class="absolute w-fit sm:inset-y-0 top-4 right-0 flex items-center gap-1 pr-1 sm:static sm:inset-auto sm:ml-6 sm:gap-4 sm:pr-0"
             >
-              <!-- <Notifications />
-              <FloatContainer menu="NOTIFICATIONS" wClass={'w-96'}>
-                <NotificationsViewer />
-              </FloatContainer> -->
+              <a
+                class="hidden md:flex transform items-center rounded-lg bg-orange-300 px-3 py-2 text-gray-700 transition-colors duration-300 hover:bg-orange-100"
+                href="#"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M9 12l6 0" />
+                  <path d="M12 9l0 6" />
+                  <path
+                    d="M4 6v-1a1 1 0 0 1 1 -1h1m5 0h2m5 0h1a1 1 0 0 1 1 1v1m0 5v2m0 5v1a1 1 0 0 1 -1 1h-1m-5 0h-2m-5 0h-1a1 1 0 0 1 -1 -1v-1m0 -5v-2m0 -5"
+                  />
+                </svg>
 
-              <!-- {/* PROFILE */} -->
-              <!-- <ProfileButton />
-              <FloatContainer menu="PROFILE" wClass={'w-48'}>
-                <ProfileLinks />
-              </FloatContainer> -->
+                <span class="mx-2 text-sm font-medium">Publicar producto</span>
+              </a>
+
+              <input
+                type="checkbox"
+                name="usermenuopen"
+                id="usermenuopen"
+                class="peer/usermenuopen hidden absolute right-5 top-5"
+              />
+              <label
+                for="usermenuopen"
+                class="group flex gap-1 items-center rounded-md px-2 py-1 text-neutral-400 bg-neutral-900 transition-transform duration-100 ease-in peer-checked/usermenuopen:bg-neutral-700 peer-checked/usermenuopen:text-orange-300 hover:bg-neutral-700 cursor-pointer"
+              >
+                <span class="sr-only">Abrir menu de usuario</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class=""
+                >
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="hidden md:block w-4 h-4 transition-all duration-100 group-hover:mt-1"
+                >
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path d="M6 9l6 6l6 -6" />
+                </svg>
+              </label>
+              <div
+                class="absolute w-48 overflow-hidden hidden peer-checked/usermenuopen:block right-0 origin-top-right rounded-md bg-neutral-700/90 backdrop-blur top-14 shadow-sm select-none"
+              >
+                <a
+                  href="/login"
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                  id="user-menu-item-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M15 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+                    />
+                    <path d="M21 12h-13l3 -3" />
+                    <path d="M11 15l-3 -3" />
+                  </svg>
+                  Iniciar sesión
+                </a>
+                <a
+                  href="/register"
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                  id="user-menu-item-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M12 3a3 3 0 0 0 -3 3v12a3 3 0 0 0 3 3" />
+                    <path d="M6 3a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3" />
+                    <path d="M13 7h7a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-7" />
+                    <path d="M5 7h-1a1 1 0 0 0 -1 1v8a1 1 0 0 0 1 1h1" />
+                    <path d="M17 12h.01" />
+                    <path d="M13 12h.01" />
+                  </svg>
+                  Registrarme
+                </a>
+                <p
+                  class="flex items-center text-center gap-4 underline text-sm font-medium px-4 py-2 text-orange-200"
+                >
+                  Hola, NOMBRE APELLIDO
+                </p>
+                <a
+                  href="/mi-perfil"
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                  id="user-menu-item-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M10 9a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                    <path d="M4 8v-2a2 2 0 0 1 2 -2h2" />
+                    <path d="M4 16v2a2 2 0 0 0 2 2h2" />
+                    <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+                    <path d="M16 20h2a2 2 0 0 0 2 -2v-2" />
+                    <path d="M8 16a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2" />
+                  </svg>
+                  Perfil
+                </a>
+                <a
+                  href="/perfil/notificaciones"
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                  id="user-menu-item-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"
+                    />
+                    <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                  </svg>
+                  Notificaciones
+                </a>
+
+                <a
+                  href="/moderacion"
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                  id="user-menu-item-1"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h2" />
+                    <path
+                      d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5z"
+                    />
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                  </svg>
+                  Panel Moderacion
+                </a>
+
+                <a
+                  href="/administracion"
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                  id="user-menu-item-1"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M3 4m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z"
+                    />
+                    <path d="M7 20h10" />
+                    <path d="M9 16v4" />
+                    <path d="M15 16v4" />
+                    <path d="M9 12v-4" />
+                    <path d="M12 12v-1" />
+                    <path d="M15 12v-2" />
+                    <path d="M12 12v-1" />
+                  </svg>
+                  Estadisticas
+                </a>
+
+                <a
+                  class="flex items-center gap-4 hover:bg-neutral-900 px-4 py-2 text-sm text-neutral-200 hover:text-orange-200"
+                  role="menuitem"
+                  tabindex="{-1}"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5"
+                  >
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+                    />
+                    <path d="M9 12h12l-3 -3" />
+                    <path d="M18 15l3 -3" />
+                  </svg>
+                  Cerrar sesión
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -170,13 +474,12 @@
         type="checkbox"
         name="sidebar-open"
         id="sidebar-open"
-        checked
         class="peer/sidebaropen absolute left-5 top-5 hidden"
       />
 
-      <!-- esta seria la segunda navbar -->
+      <!-- segunda navbar con boton de abrir sidebar -->
       <header
-        class="fixed top-16 h-12 px-4 w-full bg-neutral-700 md:hidden flex items-center gap-8"
+        class="fixed z-10 top-24 sm:top-16 h-12 px-1 sm:px-4 w-full bg-neutral-700 md:hidden flex items-center gap-4 sm:gap-8"
       >
         <label
           for="sidebar-open"
@@ -192,7 +495,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-layout-sidebar-left-expand"
+            class="h-5 w-5"
           >
             <path
               stroke="none"
@@ -247,24 +550,23 @@
 
       <!-- background blur para mobile -->
       <div
-        class="fixed inset-0 bg-neutral-500/20 backdrop-blur peer-checked/sidebaropen:hidden md:hidden"
+        class="fixed z-50 inset-0 bg-neutral-500/20 backdrop-blur peer-checked/sidebaropen:hidden md:hidden"
       ></div>
-
-      <!-- esto es la sidebar que se muestra siempre en desktop y en mobile se puede cerrar -->
+      <!-- sidebar que se muestra siempre en desktop y en mobile se puede cerrar -->
       <aside
-        class="pointer-events-none fixed left-0 flex h-screen w-full opacity-100 transition-all peer-checked/sidebaropen:-left-full sm:basis-4/12 md:relative lg:basis-3/12"
+        class="pointer-events-none fixed z-50 left-0 flex h-screen w-full opacity-100 transition-all peer-checked/sidebaropen:-left-full sm:basis-4/12 md:relative lg:basis-3/12"
       >
         <div
-          class="pointer-events-auto fixed top-0 z-0 flex h-screen w-full max-w-[24rem] flex-shrink-0 flex-col gap-1 bg-neutral-800 text-base sm:max-w-[20rem] md:mt-16 md:h-[calc(100vh-4rem)]"
+          class="pointer-events-auto fixed top-0 z-50 flex h-screen w-full max-w-[24rem] flex-shrink-0 flex-col gap-1 bg-neutral-800 text-base sm:max-w-[20rem] md:mt-16 md:h-[calc(100vh-4rem)]"
         >
           <div class="flex flex-1 flex-col justify-between overflow-hidden">
             <nav class="space-y-6 overflow-y-auto px-8 py-2 md:px-10">
               <div class="space-y-3">
-                <button
-                  id="sidebar-close-button"
-                  class="mb-4 ml-auto flex w-fit transform items-center rounded-lg bg-neutral-900 px-3 py-2 text-neutral-400 transition-colors duration-300 md:hidden"
+                <label
+                  for="sidebar-open"
+                  class="mb-4 ml-auto flex w-fit transform items-center rounded-lg bg-neutral-900 px-3 py-2 text-neutral-400 transition-colors duration-300 md:hidden cursor-pointer"
                 >
-                  <script>
+                  <!-- <script>
                     const closeButton = document.getElementById(
                       "sidebar-close-button"
                     )
@@ -273,7 +575,7 @@
                     closeButton.addEventListener("click", () => {
                       sidebarCheckbox.checked = !sidebarCheckbox.checked
                     })
-                  </script>
+                  </script> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -299,7 +601,7 @@
                   </svg>
 
                   <span class="mx-2 text-sm font-medium">Cerrar</span>
-                </button>
+                </label>
                 <label class="px-3 text-xs uppercase text-gray-600">
                   Tu perfil
                 </label>
@@ -318,7 +620,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-user-circle"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -349,7 +651,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-user-edit"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -380,7 +682,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-table-heart"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -413,7 +715,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-bell-cog"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -456,7 +758,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-new-section"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -486,7 +788,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-packages"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -521,7 +823,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-transform"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -553,7 +855,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-ad-circle"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -589,7 +891,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-progress"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -621,7 +923,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-heart-handshake"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -654,7 +956,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-progress-x"
+                    class="h-5 w-5"
                   >
                     <path
                       stroke="none"
@@ -697,7 +999,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"
+                  class="h-5 w-5"
                 >
                   <path
                     stroke="none"
